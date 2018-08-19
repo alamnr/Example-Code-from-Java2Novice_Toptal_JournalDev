@@ -10,10 +10,18 @@ public class ColorManager {
 		this.color.printColor();
 	}
 
-	public void setColor(MyColor color) {
+	/*public void setColor(MyColor color) {
 		this.color = color;
-	}
+	}*/
 	
+	
+	/**
+     * dependency injection through constructor
+     * @param myColor
+     */
+    public ColorManager(MyColor myColor){
+        this.color = myColor;
+    }
 	
 
 }
