@@ -1,4 +1,4 @@
-package com.java2novice.test;
+package com.java2novice.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -9,7 +9,6 @@ import com.java2novice.beans.SpringFirstTest;
 import com.java2novice.config.MyAppConfig;
 import com.java2novice.service.MyBusinessService;
 import com.java2novice.service.MyJdbcService;
-import com.java2novice.spring.ApplicationContextProvider;
 
 public class SpringDemo {
 

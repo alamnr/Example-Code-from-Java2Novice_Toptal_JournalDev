@@ -6,4 +6,9 @@
       <bean id="springTest" class="com.java2novice.beans.SpringFirstTest" />
     
     <bean id="applicationContextProvider" class="com.java2novice.spring.ApplicationContextProvider"/>
+    
+    <bean id="colorManager" class="com.java2novice.manager.ColorManager">
+    	<property name="color" ref="blueColor"></property>
+    </bean>
+    <bean id="blueColor" class="com.java2novice.beans.RedColor"/>
 </beans>
