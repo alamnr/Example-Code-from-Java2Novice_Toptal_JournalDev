@@ -10,11 +10,18 @@
     <!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager">
     	<property name="color" ref="blueColor"></property>
     </bean> -->
-     <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
+     <!-- <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
     	<constructor-arg>
     	   <ref bean="blueColor"/>
     	</constructor-arg>
+    </bean> -->
+    
+    <bean id="colorManager" class="com.java2novice.manager.ColorManager">
+    	<property name="color">
+    		<bean class="com.java2novice.beans.RedColor"/>
+    	</property>
     </bean>
+    
     <bean id="blueColor" class="com.java2novice.beans.RedColor"/>
     
     <bean id="articleBean" class="com.java2novice.beans.Article">
