@@ -10,7 +10,7 @@
     <!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager">
     	<property name="color" ref="blueColor"></property>
     </bean> -->
-     <bean id="colorManager" class="com.java2novice.manager.ColorManager">
+     <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
     	<constructor-arg>
     	   <ref bean="blueColor"/>
     	</constructor-arg>
@@ -25,5 +25,11 @@
         <value>120</value>
        </constructor-arg>
     
+    </bean>
+    <bean id="employeeBean" class="com.java2novice.beans.MutableEmployeeBean">
+    	<property name="empId" value="1016"/>
+    	<property name="name" value="Nataraj"/>
+    	<property name="role" value="manager"/>
+    	
     </bean>
 </beans>

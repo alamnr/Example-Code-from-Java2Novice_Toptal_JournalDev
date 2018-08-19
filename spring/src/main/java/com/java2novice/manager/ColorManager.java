@@ -4,7 +4,7 @@ import com.java2novice.beans.MyColor;
 
 public class ColorManager {
 	
-	MyColor color;
+	private final MyColor color;
 	
 	public void printColor(){
 		this.color.printColor();
@@ -14,6 +14,9 @@ public class ColorManager {
 		this.color = color;
 	}*/
 	
+	public MyColor getColor() {
+		return this.color ;
+	}
 	
 	/**
      * dependency injection through constructor
