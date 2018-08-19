@@ -16,4 +16,14 @@
     	</constructor-arg>
     </bean>
     <bean id="blueColor" class="com.java2novice.beans.RedColor"/>
+    
+    <bean id="articleBean" class="com.java2novice.beans.Article">
+       <constructor-arg type="java.lang.String">
+       		<value>Java2novice  article</value>
+       </constructor-arg>
+       <constructor-arg type="int">
+        <value>120</value>
+       </constructor-arg>
+    
+    </bean>
 </beans>
