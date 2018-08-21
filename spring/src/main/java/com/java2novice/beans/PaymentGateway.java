@@ -22,6 +22,9 @@ public class PaymentGateway {
 	private String description;
 	
 	
+	 @Value("#{orderBean.taxPaid ? true : false}")
+	 private boolean canProcessOrder;
+	     
 
 	public String getDescription() {
 		return description;
@@ -56,8 +59,14 @@ public class PaymentGateway {
 		this.itemName = itemName;
 	}
 
-	public void processOrder(){
-		System.out.println("Processing Order:"+order.getItem());
-	}
+	
+	
+	 public void processOrder(){
+	        if(canProcessOrder){
+	            System.out.println("Processing order: "+order.getItem());
+	        } else {
+	            System.out.println("Please pay tax before ordering...");
+	        }
+	    }
 
 }

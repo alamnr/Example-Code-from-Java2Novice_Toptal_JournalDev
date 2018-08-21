@@ -17,6 +17,9 @@ public class Order {
 	@Value("India")
 	private  String address;
 	
+	@Value("true")
+    private boolean taxPaid;
+	
 	/*public Order(String item, double price, String address) {
 		super();
 		this.item = item;
@@ -29,6 +32,12 @@ public class Order {
 	
 	public String getItem() {
 		return item;
+	}
+	public boolean isTaxPaid() {
+		return taxPaid;
+	}
+	public void setTaxPaid(boolean taxPaid) {
+		this.taxPaid = taxPaid;
 	}
 	public void setItem(String item) {
 		this.item = item;

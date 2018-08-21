@@ -1,5 +1,6 @@
 package com.java2novice.spring;
 
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -13,6 +14,8 @@ import com.java2novice.service.MyBusinessService;
 import com.java2novice.service.MyJdbcService;
 
 public class SpringDemo {
+	
+	static final Logger logger = Logger.getLogger(SpringDemo.class);  
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -50,7 +53,7 @@ public class SpringDemo {
 		businessService.runMyBusiness();
 		
 		
-		
+		logger.error("Hi there, I'm logging");
 		
 		
 		
