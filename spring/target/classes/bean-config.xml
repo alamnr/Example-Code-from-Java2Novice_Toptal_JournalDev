@@ -41,7 +41,7 @@
 	<bean id="dateFormater" class="java.text.SimpleDateFormat">
 		<constructor-arg value="dd-MM-yyyy" />
 	</bean>
-	<bean id="myEmployee" class="com.java2novice.beans.Employee">
+	<!-- <bean id="myEmployee" class="com.java2novice.beans.Employee">
 		<property name="doj">
 			<bean factory-bean="dateFormater" factory-method="parse">
 				<constructor-arg value="23-03-1982" />
@@ -52,8 +52,20 @@
 	<bean
 		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
 		<property name="requiredAnnotationType" value="com.java2novice.custom.annotion.Mandatory" />
-	</bean>
+	</bean> -->
 
 	<!-- <bean id="childEmployee" parent="myEmployee"> <property name="empId" 
 		value="1016"/> <property name="name" value="Nataraj"/> </bean> -->
+		
+		<bean id="filmDirectors" class="com.java2novice.beans.FilmDirectors">
+			<property name="directorList">
+				<list>
+					<value>RajaMouli</value>
+					<value>Steve</value>
+					<value>Martin</value>
+					<value>Alfred</value>
+				</list>
+			</property>
+		</bean>
+		
 </beans>
