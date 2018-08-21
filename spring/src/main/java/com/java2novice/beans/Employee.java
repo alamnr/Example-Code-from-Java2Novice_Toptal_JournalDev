@@ -2,6 +2,10 @@ package com.java2novice.beans;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Required;
+
+import com.java2novice.custom.annotion.Mandatory;
+
 public class Employee {
 	
 	private int empId;
@@ -23,6 +27,8 @@ public class Employee {
 	public String getRole() {
 		return role;
 	}
+	//@Required
+	@Mandatory
 	public void setRole(String role) {
 		this.role = role;
 	}

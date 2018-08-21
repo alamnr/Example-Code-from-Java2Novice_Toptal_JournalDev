@@ -1,54 +1,59 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
- 
-      <bean id="springTest" class="com.java2novice.beans.SpringFirstTest" />
-    
-    <bean id="applicationContextProvider" class="com.java2novice.spring.ApplicationContextProvider"/>
-    
-    <!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager">
-    	<property name="color" ref="blueColor"></property>
-    </bean> -->
-    <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
-    	<constructor-arg>
-    	   <ref bean="blueColor"/>
-    	</constructor-arg>
-    </bean> 
-    
-   <!--  <bean id="colorManager" class="com.java2novice.manager.ColorManager">
-    	<property name="color">
-    		<bean class="com.java2novice.beans.RedColor"/>
-    	</property>
-    </bean> -->
-    
-    
-    <bean id="blueColor" class="com.java2novice.beans.RedColor"/>
-    
-    <bean id="articleBean" class="com.java2novice.beans.Article">
-       <constructor-arg type="java.lang.String">
-       		<value>Java2novice  article</value>
-       </constructor-arg>
-       <constructor-arg type="int">
-        <value>120</value>
-       </constructor-arg>
-    
-    </bean>
-    <bean id="employeeBean" class="com.java2novice.beans.MutableEmployeeBean">
-    	<property name="empId" value="1016"/>
-    	<property name="name" value="Nataraj"/>
-    	<property name="role" value="manager"/>
-    	
-    </bean>
-    
-    <bean id="dateFormater" class="java.text.SimpleDateFormat">
-    	<constructor-arg value="dd-MM-yyyy"/>
-    </bean>
-    <bean id="myEmployee" class="com.java2novice.beans.Employee">
-    	<property name="doj">
-    		<bean factory-bean="dateFormater" factory-method="parse">
-    			<constructor-arg value="23-03-1982"/>
-    		</bean>
-    	</property>
-    </bean>
+
+	<bean id="springTest" class="com.java2novice.beans.SpringFirstTest" />
+
+	<bean id="applicationContextProvider" class="com.java2novice.spring.ApplicationContextProvider" />
+
+	<!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager"> 
+		<property name="color" ref="blueColor"></property> </bean> -->
+	<bean id="colorManager" class="com.java2novice.manager.ColorManager">
+		<constructor-arg>
+			<ref bean="blueColor" />
+		</constructor-arg>
+	</bean>
+
+	<!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager"> 
+		<property name="color"> <bean class="com.java2novice.beans.RedColor"/> </property> 
+		</bean> -->
+
+
+	<bean id="blueColor" class="com.java2novice.beans.RedColor" />
+
+	<bean id="articleBean" class="com.java2novice.beans.Article">
+		<constructor-arg type="java.lang.String">
+			<value>Java2novice article</value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>120</value>
+		</constructor-arg>
+
+	</bean>
+	<bean id="employeeBean" class="com.java2novice.beans.MutableEmployeeBean">
+		<property name="empId" value="1016" />
+		<property name="name" value="Nataraj" />
+		<property name="role" value="manager" />
+
+	</bean>
+
+	<bean id="dateFormater" class="java.text.SimpleDateFormat">
+		<constructor-arg value="dd-MM-yyyy" />
+	</bean>
+	<bean id="myEmployee" class="com.java2novice.beans.Employee">
+		<property name="doj">
+			<bean factory-bean="dateFormater" factory-method="parse">
+				<constructor-arg value="23-03-1982" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+		<property name="requiredAnnotationType" value="com.java2novice.custom.annotion.Mandatory" />
+	</bean>
+
+	<!-- <bean id="childEmployee" parent="myEmployee"> <property name="empId" 
+		value="1016"/> <property name="name" value="Nataraj"/> </bean> -->
 </beans>

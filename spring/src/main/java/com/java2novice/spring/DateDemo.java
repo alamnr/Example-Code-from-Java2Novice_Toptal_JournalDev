@@ -14,6 +14,10 @@ public class DateDemo {
 		Employee amp = cfgCtx.getBean(Employee.class);
 		System.out.println(amp.toString());
 		
+		/*Employee emp1= (Employee) cfgCtx.getBean("childEmployee");
+		System.out.println(emp1.toString());*/
+		
+		
 
 	}
 
