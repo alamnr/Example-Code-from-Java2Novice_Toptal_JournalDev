@@ -10,17 +10,18 @@
     <!-- <bean id="colorManager" class="com.java2novice.manager.ColorManager">
     	<property name="color" ref="blueColor"></property>
     </bean> -->
-     <!-- <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
+    <bean id="colorManager"  class="com.java2novice.manager.ColorManager">
     	<constructor-arg>
     	   <ref bean="blueColor"/>
     	</constructor-arg>
-    </bean> -->
+    </bean> 
     
-    <bean id="colorManager" class="com.java2novice.manager.ColorManager">
+   <!--  <bean id="colorManager" class="com.java2novice.manager.ColorManager">
     	<property name="color">
     		<bean class="com.java2novice.beans.RedColor"/>
     	</property>
-    </bean>
+    </bean> -->
+    
     
     <bean id="blueColor" class="com.java2novice.beans.RedColor"/>
     
@@ -38,5 +39,16 @@
     	<property name="name" value="Nataraj"/>
     	<property name="role" value="manager"/>
     	
+    </bean>
+    
+    <bean id="dateFormater" class="java.text.SimpleDateFormat">
+    	<constructor-arg value="dd-MM-yyyy"/>
+    </bean>
+    <bean id="myEmployee" class="com.java2novice.beans.Employee">
+    	<property name="doj">
+    		<bean factory-bean="dateFormater" factory-method="parse">
+    			<constructor-arg value="23-03-1982"/>
+    		</bean>
+    	</property>
     </bean>
 </beans>

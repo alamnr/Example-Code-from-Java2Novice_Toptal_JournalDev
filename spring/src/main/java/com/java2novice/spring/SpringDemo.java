@@ -1,12 +1,14 @@
 package com.java2novice.spring;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.java2novice.beans.MyColor;
 import com.java2novice.beans.SpringFirstTest;
 import com.java2novice.config.MyAppConfig;
+import com.java2novice.manager.NetworkManager;
 import com.java2novice.service.MyBusinessService;
 import com.java2novice.service.MyJdbcService;
 
@@ -33,6 +35,12 @@ public class SpringDemo {
 		//jdbcService = ctx.getBean(MyJdbcService.class);
 		//jdbcService  = (MyJdbcService) ctx.getBean("jdbcService");
 		jdbcService  =  ctx.getBean("jdbcService",MyJdbcService.class);
+		
+		ConfigurableApplicationContext  cfgContext = new ClassPathXmlApplicationContext("applicationContext3.xml");
+		NetworkManager networkMng = (NetworkManager) cfgContext.getBean("netManager");
+        networkMng.readData();
+        cfgContext.close();
+		
 		jdbcService.createJdbcConnection();
 		
 		MyBusinessService businessService;
