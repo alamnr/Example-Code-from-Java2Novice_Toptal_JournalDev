@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 
+ <!-- <bean id="orderBean" class="com.java2novice.beans.Order">
+ 	<constructor-arg value="Java Book"/>
+ 	<constructor-arg value="234"/>
+ 	<constructor-arg value="India"/>
+ </bean>
+ 
+ <bean id="paymentGateway" class="com.java2novice.beans.PaymentGateway">
+ 	<property name="itemName" value="#{orderBean.item}"/>
+ 	<property name="order" value="#{orderBean}"/>
+ </bean> -->
+ 
+ <context:component-scan base-package="com.java2novice.beans" />
+ 
+ 
+ </beans>

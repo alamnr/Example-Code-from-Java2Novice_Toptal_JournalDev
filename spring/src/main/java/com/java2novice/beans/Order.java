@@ -5,24 +5,39 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Lazy
+@Component("orderBean")
 public class Order {
 	
+	@Value("Java Book")
+	private  String item;
 	
-	private final String item;
+	@Value("345")
+	private  double price;
 	
-	private final double price;
+	@Value("India")
+	private  String address;
 	
-	private final String address;
-	
-	public Order(String item, double price, String address) {
+	/*public Order(String item, double price, String address) {
 		super();
 		this.item = item;
 		this.price = price;
 		this.address = address;
-	}
+	}*/
+	
+	
+	
+	
 	public String getItem() {
 		return item;
+	}
+	public void setItem(String item) {
+		this.item = item;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public double getPrice() {
 		return price;
@@ -30,6 +45,11 @@ public class Order {
 	public String getAddress() {
 		return address;
 	}
+	
+	public String getDescription(String prefix){
+        return prefix+": "+item+" | "+price+" | "+address;
+    }
+ 
 	@Override
 	public String toString() {
 		return "Order [item=" + item + ", price=" + price + ", address=" + address + "]";
