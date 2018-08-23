@@ -17,7 +17,7 @@ public class JdbcDemo {
 		System.out.println(userDao.getUserByid(1).toString());
 		
 		User user = new User();
-		user.setUserId(2);
+		user.setUserId(10);
 		user.setCountry("Bangladesh");
 		user.setEmail("alamnr@gmail.com");
 		user.setName("alam");
