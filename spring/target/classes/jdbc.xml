@@ -13,4 +13,8 @@
     <bean id="userDao" class="com.java2novice.dao.UserDaoImpl">
     	<property name="dataSource" ref="dataSource"/>
     </bean>
+    
+    <bean id="userDaoNew" class="com.java2novice.dao.UserDaoImplNew">
+    	<property name="dataSource" ref="dataSource"/>
+    </bean>
 </beans>
